@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Cards</title>
+    <style>
+        table {
+            width: 100%;
+        }
+        th {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div">           
+        <h1>PC Video Cards</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Memory Size (MB)</th>
+                    <th>Manufacturer</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% if (videoCards.length > 0) { %>
+                <% videoCards.forEach(videoCard => { %>
+                    <tr>
+                        <td><%= videoCard.name %></td>
+                        <td><%= videoCard.memorySize %></td>
+                        <td><%= videoCard.manufacturer %></td>
+                    </tr>
+                <%  }); %>
+            <% } %>
+            </tbody>
+            <tfoot>
+                <tr><td colspan="2"> <h3>Showing <%=videoCards.length%> Video Cards</h3></td></tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
